@@ -1,0 +1,83 @@
+/* Stili del solo componente radice: si aggiunge il blocco della durata. */
+
+:host {
+  display: block;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.intestazione {
+  border-bottom: 2px solid #1e3a5f;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.intestazione h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: #1e3a5f;
+}
+
+.sottotitolo {
+  margin: 0.25rem 0 0;
+  color: #5a6b7d;
+  font-size: 0.95rem;
+}
+
+.riepilogo {
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 8px;
+  background-color: #eef2f7;
+  font-size: 0.9rem;
+}
+
+.riepilogo p {
+  margin: 0.2rem 0 0;
+}
+
+.campo {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #5a6b7d;
+}
+
+.campo input {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  margin-top: 0.25rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #d6dde4;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.durata {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.etichetta {
+  color: #5a6b7d;
+}
+
+.messaggio {
+  color: #1b6b4a;
+  font-weight: 600;
+}
+
+.elenco {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.elenco app-scheda-dispositivo {
+  display: block;
+  width: 24rem;
+}

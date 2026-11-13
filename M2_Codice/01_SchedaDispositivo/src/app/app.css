@@ -1,0 +1,36 @@
+/* Stili del solo componente radice.
+   Rispetto a M1 sono sparite le regole .scheda, .inventario, .dettagli e .stato:
+   ora quegli elementi stanno nel template del figlio, e l'incapsulamento impedisce
+   a una regola scritta qui di raggiungerli. Sono state spostate, non cancellate,
+   in scheda-dispositivo.css. È la dimostrazione da fare in classe: prima si prova
+   a lasciarle qui e si osserva che la scheda perde ogni formattazione. */
+
+:host {
+  display: block;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.intestazione {
+  border-bottom: 2px solid #1e3a5f;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.intestazione h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: #1e3a5f;
+}
+
+.sottotitolo {
+  margin: 0.25rem 0 0;
+  color: #5a6b7d;
+  font-size: 0.95rem;
+}
+
+.contenuto > p {
+  margin: 0 0 1.5rem;
+  color: #33414f;
+}

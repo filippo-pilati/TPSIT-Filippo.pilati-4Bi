@@ -1,0 +1,31 @@
+<header class="intestazione">
+  <h1>{{ titolo }}</h1>
+  <p class="sottotitolo">{{ istituto }}</p>
+</header>
+
+<main class="contenuto">
+  <section class="riepilogo">
+    <label class="campo">
+      Richiedente
+      <input type="text"
+             placeholder="Nome e cognome"
+             (input)="aggiornaRichiedente($event)">
+    </label>
+    <p>Richieste registrate: {{ numeroRichieste }}</p>
+    <p class="messaggio">{{ messaggio }}</p>
+  </section>
+
+  <!-- Lo stesso componente usato tre volte, con tre dati diversi.
+       I dati scendono con [dispositivo], le notifiche salgono con (richiesta). -->
+  <div class="elenco">
+    <app-scheda-dispositivo [dispositivo]="primoDispositivo"
+                            (richiesta)="registraRichiesta($event)" />
+
+    <app-scheda-dispositivo [dispositivo]="secondoDispositivo"
+                            (richiesta)="registraRichiesta($event)" />
+
+    <app-scheda-dispositivo [dispositivo]="terzoDispositivo"
+                            [compatta]="true"
+                            (richiesta)="registraRichiesta($event)" />
+  </div>
+</main>

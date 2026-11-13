@@ -1,0 +1,37 @@
+<header class="intestazione">
+  <h1>{{ titolo }}</h1>
+  <p class="sottotitolo">{{ istituto }}</p>
+</header>
+
+<main class="contenuto">
+  <section class="riepilogo">
+    <label class="campo">
+      Richiedente
+      <input type="text"
+             placeholder="Nome e cognome"
+             (input)="aggiornaRichiedente($event)">
+    </label>
+
+    <!-- Binding bidirezionale: equivale a scrivere
+         [giorni]="giorniPrestito" (giorniChange)="giorniPrestito = $event" -->
+    <div class="durata">
+      <span class="etichetta">Durata del prestito</span>
+      <app-selettore-durata [(giorni)]="giorniPrestito" />
+    </div>
+
+    <p>Richieste registrate: {{ numeroRichieste }}</p>
+    <p class="messaggio">{{ messaggio }}</p>
+  </section>
+
+  <div class="elenco">
+    <app-scheda-dispositivo [dispositivo]="primoDispositivo"
+                            (richiesta)="registraRichiesta($event)" />
+
+    <app-scheda-dispositivo [dispositivo]="secondoDispositivo"
+                            (richiesta)="registraRichiesta($event)" />
+
+    <app-scheda-dispositivo [dispositivo]="terzoDispositivo"
+                            [compatta]="true"
+                            (richiesta)="registraRichiesta($event)" />
+  </div>
+</main>

@@ -1,0 +1,25 @@
+<!-- Il valore ricevuto con input() si legge sempre con le parentesi:
+     dispositivo(), non dispositivo. -->
+<article class="scheda"
+         [attr.data-inventario]="dispositivo().inventario"
+         [attr.aria-label]="'Dispositivo ' + dispositivo().inventario"
+         [class.compatta]="compatta()"
+         [class.disponibile]="dispositivo().stato === 'disponibile'"
+         [class.in-prestito]="dispositivo().stato === 'in prestito'"
+         [class.manutenzione]="dispositivo().stato === 'manutenzione'">
+
+  <p class="inventario">{{ dispositivo().inventario }}</p>
+  <h2>{{ dispositivo().marca }} {{ dispositivo().modello }}</h2>
+  <p class="dettagli">{{ dispositivo().tipo }} — anno {{ dispositivo().anno }}</p>
+  <p class="stato">Stato: {{ dispositivo().stato }}</p>
+
+  <div class="barra-contenitore" title="Vita già trascorsa">
+    <div class="barra" [style.width.%]="percentualeVita()"></div>
+  </div>
+
+  <button class="comando"
+          [disabled]="dispositivo().stato !== 'disponibile'"
+          (click)="richiedi()">
+    Richiedi in prestito
+  </button>
+</article>

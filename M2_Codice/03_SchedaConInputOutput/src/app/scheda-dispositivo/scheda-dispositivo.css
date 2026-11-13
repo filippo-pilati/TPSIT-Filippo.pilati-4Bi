@@ -1,0 +1,89 @@
+/* Rispetto alla seconda lezione si aggiungono le regole della versione compatta
+   e spariscono quelle del campo di testo e del messaggio, che si sono spostati
+   nel componente radice insieme al loro markup.
+   La classe .scheda può esistere anche in app.css con tutt'altro significato:
+   l'incapsulamento tiene separate le due cose. */
+
+.scheda {
+  background-color: #ffffff;
+  border: 1px solid #d6dde4;
+  border-left-width: 6px;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.scheda.disponibile {
+  border-left-color: #1b6b4a;
+}
+
+.scheda.in-prestito {
+  border-left-color: #b56a00;
+}
+
+.scheda.manutenzione {
+  border-left-color: #9c2a2a;
+  background-color: #fdf6f6;
+}
+
+/* Versione ridotta richiesta dal padre con [compatta]="true". */
+.scheda.compatta {
+  padding: 0.6rem 0.9rem;
+}
+
+.scheda.compatta .dettagli,
+.scheda.compatta .barra-contenitore {
+  display: none;
+}
+
+.scheda h2 {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 1.2rem;
+  color: #1e3a5f;
+}
+
+.inventario {
+  margin: 0;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #5a6b7d;
+}
+
+.dettagli {
+  margin: 0 0 0.5rem;
+  color: #33414f;
+}
+
+.stato {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  color: #1b6b4a;
+}
+
+.barra-contenitore {
+  height: 6px;
+  margin: 0.75rem 0;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.barra {
+  height: 100%;
+  background-color: #1e3a5f;
+}
+
+.comando {
+  padding: 0.45rem 0.9rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #1e3a5f;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.comando:disabled {
+  background-color: #b6bec7;
+  cursor: not-allowed;
+}

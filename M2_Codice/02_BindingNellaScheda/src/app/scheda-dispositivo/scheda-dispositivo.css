@@ -1,0 +1,102 @@
+/* Le regole della prima lezione restano; si aggiungono le tre classi di stato,
+   la barra e il pulsante. Tutto vale soltanto dentro questo componente. */
+
+.scheda {
+  background-color: #ffffff;
+  border: 1px solid #d6dde4;
+  border-left-width: 6px;
+  border-radius: 8px;
+  padding: 1.25rem;
+  max-width: 26rem;
+}
+
+/* Classi applicate dal binding [class.*] in base allo stato del dispositivo. */
+.scheda.disponibile {
+  border-left-color: #1b6b4a;
+}
+
+.scheda.in-prestito {
+  border-left-color: #b56a00;
+}
+
+.scheda.manutenzione {
+  border-left-color: #9c2a2a;
+  background-color: #fdf6f6;
+}
+
+.scheda h2 {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 1.2rem;
+  color: #1e3a5f;
+}
+
+.inventario {
+  margin: 0;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #5a6b7d;
+}
+
+.dettagli {
+  margin: 0 0 0.5rem;
+  color: #33414f;
+}
+
+.stato {
+  margin: 0;
+  font-weight: 600;
+  color: #1b6b4a;
+}
+
+.barra-contenitore {
+  height: 6px;
+  margin: 0.75rem 0;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.barra {
+  height: 100%;
+  background-color: #1e3a5f;
+}
+
+.campo {
+  display: block;
+  margin: 0.75rem 0 0.5rem;
+  font-size: 0.85rem;
+  color: #5a6b7d;
+}
+
+.campo input {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #d6dde4;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.comando {
+  padding: 0.45rem 0.9rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #1e3a5f;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.comando:disabled {
+  background-color: #b6bec7;
+  cursor: not-allowed;
+}
+
+.messaggio {
+  margin: 0.6rem 0 0;
+  min-height: 1.2em;
+  font-size: 0.85rem;
+  color: #1b6b4a;
+}

@@ -1,0 +1,39 @@
+<!-- Binding di attributo: data-inventario non ha alcuna proprietà corrispondente
+     nel DOM, quindi il prefisso attr. è obbligatorio. Da provare in classe:
+     togliendolo, il terminale segnala NG8002.
+     Per aria-label Angular 22 accetta anche la forma [aria-label]: qui si usa
+     attr. per uniformità con l'attributo qui sopra, non perché l'altra sia errata. -->
+<article class="scheda"
+         [attr.data-inventario]="dispositivo.inventario"
+         [attr.aria-label]="'Dispositivo ' + dispositivo.inventario"
+         [class.disponibile]="dispositivo.stato === 'disponibile'"
+         [class.in-prestito]="dispositivo.stato === 'in prestito'"
+         [class.manutenzione]="dispositivo.stato === 'manutenzione'">
+
+  <p class="inventario">{{ dispositivo.inventario }}</p>
+  <h2>{{ dispositivo.marca }} {{ dispositivo.modello }}</h2>
+  <p class="dettagli">{{ dispositivo.tipo }} — anno {{ dispositivo.anno }}</p>
+  <p class="stato">Stato: {{ dispositivo.stato }}</p>
+
+  <!-- Binding di stile: l'unità di misura si scrive nel nome del binding. -->
+  <div class="barra-contenitore" title="Vita già trascorsa">
+    <div class="barra" [style.width.%]="percentualeVita()"></div>
+  </div>
+
+  <!-- Binding di evento con $event: leggiamo il testo digitato. -->
+  <label class="campo">
+    Richiedente
+    <input type="text"
+           placeholder="Nome e cognome"
+           (input)="aggiornaRichiedente($event)">
+  </label>
+
+  <!-- Binding di proprietà: il pulsante è attivo solo se il dispositivo è libero. -->
+  <button class="comando"
+          [disabled]="dispositivo.stato !== 'disponibile'"
+          (click)="richiedi()">
+    Richiedi in prestito
+  </button>
+
+  <p class="messaggio">{{ messaggio }}</p>
+</article>

@@ -1,0 +1,14 @@
+<!-- L'intestazione costruita in M1 resta com'era.
+     Nel <main> la <section class="scheda"> scritta a mano viene sostituita
+     dall'elemento del nuovo componente. -->
+
+<header class="intestazione">
+  <h1>{{ titolo }}</h1>
+  <p class="sottotitolo">{{ istituto }}</p>
+</header>
+
+<main class="contenuto">
+  <p>Registro dei notebook, dei tablet e dei proiettori concessi in comodato d'uso.</p>
+
+  <app-scheda-dispositivo />
+</main>

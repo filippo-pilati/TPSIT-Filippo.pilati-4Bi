@@ -1,0 +1,21 @@
+<div class="selettore">
+  <button type="button"
+          class="passo"
+          [disabled]="giorni() <= 1"
+          (click)="diminuisci()">
+    −
+  </button>
+
+  <span class="valore">{{ giorni() }} giorni</span>
+
+  <button type="button"
+          class="passo"
+          [disabled]="giorni() >= 60"
+          (click)="aumenta()">
+    +
+  </button>
+
+  <button type="button" class="standard" (click)="durataStandard()">
+    Durata standard
+  </button>
+</div>
